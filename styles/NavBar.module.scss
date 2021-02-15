@@ -1,0 +1,15 @@
+$font-color: #FBC403;
+$font-hover:  white; 	
+
+.nav-link {
+    color: none; 
+}
+.nav-link:hover {
+    color: none; 
+}
+.fontColor {
+    color: $font-color; 
+}
+.fontColor:hover {
+    color: $font-hover; 
+}
