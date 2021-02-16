@@ -1,2 +1,78 @@
-$font-header: gold;	
+@import "mixins";
+@import "variables"; 
 
+
+.home-main {
+    width: 100%; 
+    padding: 2.5rem 0; 
+
+    @include tablet() {
+        padding-bottom: 5rem;
+    }
+    @include desktop() {
+        padding: 2.5rem 0; 
+        padding-bottom: 10rem;
+    }
+    @include desktop-large() {
+        padding-bottom: 10rem; 
+    }
+}
+
+.home-main-content {
+    width: 100%;
+    color: $font-dark; 
+
+    @include mobile() {
+        padding: 2.5rem 0; 
+        padding-bottom: 2.5rem; 
+    }
+    @include desktop() {
+        padding: 5rem 0; 
+    }
+    @include desktop-large() {
+        padding: 5rem 0; 
+    }
+}
+
+.home-main-content h2 {
+    text-transform: uppercase;
+    color: $font-dark;
+    font-size: 12px;   
+
+    @include desktop() {
+        padding: 2px 0; 
+        padding-right: 1rem;
+        font-size: 2.5rem; 
+        font-weight: 500;
+    }
+}
+
+.home-main-content h3 {
+    width: 100%; 
+    color: $font-dark; 
+    font-size: 12px;  
+
+    @include desktop() {
+        padding: 5px 0; 
+        padding-right: 1rem; 
+        font-size: 1.5rem; 
+        font-weight: 400; 
+    }
+}
+
+.home-main-image {
+    width: 100%; 
+    text-align: right;
+
+    @include mobile() {
+        padding-top: 2rem; 
+    }
+
+    @include desktop() {
+        padding: 10px 10px;
+        padding-top: 2rem; 
+    }
+}
+.home-main-image img {
+    width: 100%; 
+}

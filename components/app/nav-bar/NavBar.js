@@ -1,21 +1,26 @@
-import { Navbar, Nav } from 'react-bootstrap'
 import styles from '../../../styles/NavBar.module.scss'
-
+import Image from 'next/image';
+import {Container, Row, Col} from 'react-bootstrap'; 
 
 function NavBar() {
 
     return(
-        <Navbar bg="none" expand="lg">
-            <Navbar.Brand className={styles["fontColor"]} href="#">Brian S. Boros</Navbar.Brand>
-            <Navbar.Toggle  aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto"> 
-                    <Nav.Link className={styles["fontColor"]}  href="#home">Home</Nav.Link>
-                    <Nav.Link className={styles["fontColor"]} href="#Link">Portfolio</Nav.Link>
-                    <Nav.Link className={styles["fontColor"]} href="#link">Blog</Nav.Link>
-                </Nav> 
-            </Navbar.Collapse> 
-        </Navbar>
+        <Container className={styles["nav-container"]}>
+            <Row className={styles["nav-brand"]}>
+                <Image 
+                    src="/assets/images/bsblogo.png"
+                    className={["logo"]}
+                    alt="Brian S. Boros Logo"
+                    width={99}
+                    height={99}>
+                </Image> 
+            </Row>
+            <Row className={["nav"]}>
+                <Col className={styles["nav-item"]}><a>Home</a></Col>
+                <Col className={styles["nav-item"]}><a>Portfolio</a></Col>
+                <Col  className={styles["nav-item"]}><a>Blog</a></Col> 
+            </Row>
+        </Container>
     )
 }
 
