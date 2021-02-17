@@ -1,6 +1,7 @@
 import styles from '../../../styles/NavBar.module.scss'
 import Image from 'next/image';
 import {Container, Row, Col} from 'react-bootstrap'; 
+import Link from 'next/link'
 
 function NavBar() {
 
@@ -16,9 +17,21 @@ function NavBar() {
                 </Image> 
             </Row>
             <Row className={["nav"]}>
-                <Col className={styles["nav-item"]}><a>Home</a></Col>
-                <Col className={styles["nav-item"]}><a>Portfolio</a></Col>
-                <Col  className={styles["nav-item"]}><a>Blog</a></Col> 
+                <Col className={styles["nav-item"]}>
+                    <Link href="/" >
+                        <a className={["nav-link"]}>Home</a>
+                    </Link>
+                </Col>
+                <Col className={styles["nav-item"]}>
+                    <Link className={["nav-link"]} href="/portfolio">
+                        <a className={["nav-link"]}>Portfolio</a>
+                    </Link>
+                </Col>
+                <Col  className={styles["nav-item"]}>
+                    <Link className={["nav-link"]} href="/blog">
+                        <a className={["nav-link"]}>Blog</a>
+                    </Link>
+                </Col> 
             </Row>
         </Container>
     )

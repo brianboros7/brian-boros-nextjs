@@ -44,7 +44,7 @@
 
     }
 }
-.nav-item a {
+.nav-item .navlink {
     justify-content: center; 
 
     @include desktop() {
@@ -52,6 +52,6 @@
     }
 }
 
-.nav-item:hover {
+.nav-link:hover {
     color: $font-hover; 
 }
