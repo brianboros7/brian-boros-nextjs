@@ -9,7 +9,7 @@ function Portfolio() {
             <Header /> 
             <Container className={["portfolio-container"]}>
                 <Row>
-                    <h1>Hello World </h1>
+                    <h1>Portfolio </h1>
                 </Row>
             </Container>
         </div>

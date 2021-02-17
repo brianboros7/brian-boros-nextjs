@@ -9,7 +9,7 @@ function Blog() {
             <Header /> 
             <Container className={["blog-container"]}>
                 <Row>
-                    <h1>Hello World, Blog </h1>
+                    <h1>Blog </h1>
                 </Row>
             </Container>
         </div>

@@ -18,8 +18,8 @@ function NavBar() {
             </Row>
             <Row className={["nav"]}>
                 <Col className={styles["nav-item"]}>
-                    <Link className={["nav-link"]} href="/" >
-                        <a className={["nav-link"]}>Home</a>
+                    <Link href="/" >
+                        <a>Home</a>
                     </Link>
                 </Col>
                 <Col className={styles["nav-item"]}>
