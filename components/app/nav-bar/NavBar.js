@@ -12,24 +12,24 @@ function NavBar() {
                     src="/assets/images/bsblogo.png"
                     className={["logo"]}
                     alt="Brian S. Boros Logo"
-                    width={99}
-                    height={99}>
+                    width={100}
+                    height={100}>
                 </Image> 
             </Row>
             <Row className={["nav"]}>
                 <Col className={styles["nav-item"]}>
-                    <Link href="/" >
+                    <Link className={["nav-link"]} href="/" >
                         <a className={["nav-link"]}>Home</a>
                     </Link>
                 </Col>
                 <Col className={styles["nav-item"]}>
-                    <Link className={["nav-link"]} href="/portfolio">
-                        <a className={["nav-link"]}>Portfolio</a>
+                    <Link href="/portfolio">
+                        <a>Portfolio</a>
                     </Link>
                 </Col>
                 <Col  className={styles["nav-item"]}>
-                    <Link className={["nav-link"]} href="/blog">
-                        <a className={["nav-link"]}>Blog</a>
+                    <Link href="/blog">
+                        <a>Blog</a>
                     </Link>
                 </Col> 
             </Row>

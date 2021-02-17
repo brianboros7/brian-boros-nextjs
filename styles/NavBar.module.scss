@@ -44,14 +44,14 @@
 
     }
 }
-.nav-item .navlink {
-    justify-content: center; 
+.nav-item a {
+    color: $font-light; 
 
     @include desktop() {
         padding: 5px; 
     }
 }
 
-.nav-link:hover {
+.nav-item a:hover {
     color: $font-hover; 
 }
