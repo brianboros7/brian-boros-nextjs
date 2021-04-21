@@ -13,7 +13,7 @@ export default function Home() {
         <title>Brian S.  Boros | Home</title>
       </Head>
       <Header /> 
-      <main> 
+      <main className={["main"]}> 
         <Container className={styles["home-container"]}>
           <Row className={styles["home-main"]}> 
             <Col xs={8} lg={6} className={styles["home-main-content"]}>

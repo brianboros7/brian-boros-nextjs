@@ -1,7 +1,9 @@
 @import "mixins";
 @import "variables"; 
 
-
+.main {
+    background-color: $bg-gradient; 
+}
 .home-main {
     width: 100%; 
     padding: 2.5rem 0; 

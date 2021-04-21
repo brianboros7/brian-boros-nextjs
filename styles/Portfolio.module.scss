@@ -1,3 +1,31 @@
 @import "mixins";
 @import "variables";
 
+.portfolio-container {
+    color: $font-dark; 
+}
+.portfolio-content {
+    margin-bottom: 4px; 
+}
+
+.portfolio-content h2 {
+    width: 100%; 
+    text-align: center;
+    font-size: 2.5rem; 
+    padding: 30px; 
+    
+}
+
+.portfolio-info {
+    padding: 0 20px;
+    padding: 10px 20px;
+    padding-bottom: 10px; 
+
+}
+.portfolio-info h4 {
+    color: $font-light; 
+    text-align: left; 
+    background-color: $bg-info;
+    padding: 5px 5px; 
+
+}
