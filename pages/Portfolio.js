@@ -1,6 +1,6 @@
 import styles from '../styles/Portfolio.module.scss'
 import Image from 'next/image'
-import Header from '../components/app/header/Header'
+import Header from '../components/header/Header'
 import {Container, Row, Col, Card} from 'react-bootstrap'
 
 function Portfolio() {
@@ -16,6 +16,7 @@ function Portfolio() {
                         alt="Brian S. Boros hire me photo"
                         width={1140}
                         height={250}
+                        layout="intrinsic"
                         >
                     </Image>
 

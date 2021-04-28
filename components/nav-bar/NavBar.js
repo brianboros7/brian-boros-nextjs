@@ -1,7 +1,7 @@
-import styles from '../../../styles/NavBar.module.scss'
+import styles from '../../styles/NavBar.module.scss'
 import Image from 'next/image';
-import {Container, Row, Col} from 'react-bootstrap'; 
-import Link from 'next/link'
+import { Container, Row, Col } from 'react-bootstrap'; 
+import  Link  from 'next/link'
 
 function NavBar() {
 
@@ -10,26 +10,26 @@ function NavBar() {
             <Row className={styles["nav-brand"]}>
                 <Image 
                     src="/assets/images/bsblogo.png"
-                    className={["logo"]}
+                    className={styles["logo"]}
                     alt="Brian S. Boros Logo"
-                    width={100}
-                    height={100}>
+                    width={128}
+                    height={58}>
                 </Image> 
             </Row>
             <Row className={["nav"]}>
                 <Col className={styles["nav-item"]}>
                     <Link href="/" >
-                        <a>Home</a>
+                        <a alt="home page">Home</a>
                     </Link>
                 </Col>
                 <Col className={styles["nav-item"]}>
                     <Link href="/portfolio">
-                        <a>Portfolio</a>
+                        <a alt="portfolio page">Portfolio</a>
                     </Link>
                 </Col>
                 <Col  className={styles["nav-item"]}>
                     <Link href="/blog">
-                        <a>Blog</a>
+                        <a alt="blog page">Blog</a>
                     </Link>
                 </Col> 
             </Row>

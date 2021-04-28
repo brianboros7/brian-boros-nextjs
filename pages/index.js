@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Image from 'next/image';
-import Header from '../components/app/header/Header'
-import {Container, Row, Col} from 'react-bootstrap'; 
+import Header from '../components/header/Header'
+import { Container, Row, Col } from 'react-bootstrap'; 
 
 export default function Home() {
 
   return (
-
     <div>
       <Head>
         <title>Brian S.  Boros | Home</title>
@@ -41,5 +40,5 @@ export default function Home() {
         </Container> 
       </main>
     </div>
-    )
-  }
+  )
+}

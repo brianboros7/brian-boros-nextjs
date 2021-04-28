@@ -1,12 +1,17 @@
+.blog-wrapper {
+    background-image: url("/assets/images/earth.jpg"); 
+    background-size: cover; 
+    background-position: center left; 
+    opacity: .9; 
+    height: 800px;  
+    padding-top: 50px;
+    color: white;  
+
+}
 .blog-container {
     width: 100%; 
+    padding: 0;
 }
 .blog-header {
-    width: 100%; 
-}
-.blog-header-image {
-    width: 100%; 
-}
-.bsb-hire-me {
     width: 100%; 
 }
