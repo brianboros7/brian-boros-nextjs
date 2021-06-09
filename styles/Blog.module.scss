@@ -3,19 +3,18 @@
     background-size: cover; 
     background-position: center left; 
     opacity: .9; 
-    height: 800px;  
-    padding-top: 50px;
+    padding-top: 100px;
     color: white;  
-
-}
-.blog-container {
-    width: 100%; 
-    padding: 0;
-}
-.blog-header {
-    width: 100%; 
 }
 
 .blog-card-container {
+    display: flex; 
+    flex-direction: row;
     color: black; 
+    padding: 2px; 
+}
+.blog-card {
+    justify-content: space-between;
+    padding: 2px; 
+    margin: 4px; 
 }

@@ -7,12 +7,14 @@ import BlogCard from '../components/cards/BlogCard'
 function Blog() {
 
     return(
-        <div>
+        <div className={styles["blog-page"]}>
             <Header /> 
-            <div className={styles["blog-wrapper"]}> 
+            <div className={styles["blog-wrapper"]}>
                 <Container className={styles["blog-container"]}>
                     <Row>
                         <h1>Blog Page</h1>
+                    </Row>
+                    <Row>
                         <div>
                             <BlogCard /> 
                         </div> 

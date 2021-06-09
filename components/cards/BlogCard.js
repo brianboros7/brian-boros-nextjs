@@ -1,49 +1,50 @@
 import Query from '../../hooks/useApollo'
 import styles from '../../styles/Blog.module.scss'
-// import Image from "next/image"
+import Image from "next/image"
+import Link from 'next/link'
 import Card  from "react-bootstrap/card"
 import { GET_ARTICLES } from '../../graphql/get-articles'
 import { gql } from "@apollo/client";
 import client from '../../lib/apolloClient'
 
 export default function BlogCard({ articles }) {
-    const url = "https://res.cloudinary.com/brian-boros-company/image/upload/"
 
     return(
-        <div>
-            <Query query={GET_ARTICLES}>
-                {({data: { articles }}) => { 
-                    return(
-                        <div className={styles["blog-card-container"]}>
-                            {articles && articles.map((article) => (
-                                <div key={article.id}>
-                                    <Card className={styles["blog-card"]}>
-                                        {/* <Image
+        <Query query={GET_ARTICLES}>
+            {({data: { articles }}) => { 
+                return(
+                    <div className={styles["blog-card-container"]}>
+                        {articles && articles.map((article) => (
+                            <Link href={`/article/${article.id}`}>
+                                <a>
+                                    <Card key={article.id} className={styles["blog-card"]}>
+                                        <Image
                                             src={article.image[0].url}
                                             aslt="blog card image thumbnail"
                                             width={100}
                                             height={100}
                                             >
-                                        </Image> */}
+                                        </Image>
                                         <Card.Body>
-                                            <Card.Title>
-                                                    {article.title}
-                                            </Card.Title>
                                             <Card.Text>
-                                                {article.author} 
+                                                <div>Title: {article.title}</div> 
                                             </Card.Text>
                                             <Card.Text>
-                                                {article.date} 
+                                                <div>Author: {article.author}</div> 
+                                            </Card.Text>
+                                            <Card.Text>
+                                                <div>Date: {article.date}</div> 
                                             </Card.Text>
                                         </Card.Body>
                                     </Card>
-                                </div> 
-                            ))}
-                        </div>
-                    )
-                }}
-            </Query>
-        </div>
+
+                                </a>
+                            </Link>
+                        ))}
+                    </div>
+                )
+            }}
+        </Query>
     )
 }
 
@@ -52,11 +53,11 @@ export async function getStaticProps() {
       query: gql`
       query Articles {
         articles {
-          id
           author
           title
           date
           image {
+            id
             url
           }
         }
