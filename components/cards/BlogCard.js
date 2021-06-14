@@ -53,16 +53,15 @@ export async function getStaticProps() {
       query: gql`
       query Articles {
         articles {
-          author
-          title
-          date
-          image {
             id
-            url
-          }
+            author
+            title
+            date
+            image {
+                url
+            }
         }
-      }
-    `,
+    }`,
     });
     console.log("Fetching data")
   

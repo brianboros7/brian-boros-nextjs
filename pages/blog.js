@@ -4,7 +4,7 @@ import Header from '../components/header/Header'
 import { Container, Row } from 'react-bootstrap'
 import BlogCard from '../components/cards/BlogCard'
 
-function Blog() {
+function Blog( articles ) {
 
     return(
         <div className={styles["blog-page"]}>
