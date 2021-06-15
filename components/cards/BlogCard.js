@@ -15,7 +15,8 @@ export default function BlogCard({ articles }) {
                 return(
                     <div className={styles["blog-card-container"]}>
                         {articles && articles.map((article) => (
-                            <Link href={`/article/${article.id}`}>
+                            <Link 
+                                href={{ pathname: `/blog/post/[id]`, query: { id: article.id} }}>
                                 <a>
                                     <Card key={article.id} className={styles["blog-card"]}>
                                         <Image
