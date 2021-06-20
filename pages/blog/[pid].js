@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import Image from "next/image"
-import { GET_ARTICLE } from '../../graphql/get-articles'
+import { GET_ARTICLE } from '../../graphql/get-article'
 import Query from '../../hooks/useApollo'
 import { gql } from "@apollo/client";
 import client from '../../lib/apolloClient'
@@ -20,8 +20,8 @@ export default function Post({ article }) {
               width={500}
               height={500} 
             /> 
-            <h2>{article.author}</h2>
-            <h2>{article.date}</h2>
+            <h4>{article.author}</h4>
+            <h4>{article.published_at}</h4>
             <h1>{article.title}</h1>
             <p>{article.body}</p>
           </Row>
@@ -30,37 +30,15 @@ export default function Post({ article }) {
     </Query>
   )
 }
-  
-export async function getStaticPaths() {
+
+export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
-    query Article($id: ID!) {
-      article($id: ID!) {
-        id
-        author
-        published_at
-        title
-        body
-        image {
-          url
-        }
-      }
-    }`,
-  }) 
-
-
-
-  return {paths, fallback: false }
-} 
-
-export async function getStaticProps({ params }) {
-  const { data } = await client.query({
-    query: gql`
-    query Article($id: ID!) {
-      article($id: ID!) {
-        id
-        author
-        published_at
+    query SingleArticle($id: ID!) {
+      article(id: $id) {
+        id 
+        author 
+        published_at 
         title
         body
         image {
@@ -69,12 +47,42 @@ export async function getStaticProps({ params }) {
       }
     }
   `,
-  });
-  console.log("Fetching data")
+  }
+  );
+  console.log(query)
 
   return {
     props: {
-      articles: data.articles,
+      article: data.article,
     },
   };
 }
+
+
+export async function getStaticPaths({ params }) {
+  const { data } = await client.query({
+    query: gql`
+    query SingleArticle($id: ID!) {
+      article(id: $id) {
+        id 
+        author 
+        published_at 
+        title
+        body
+        image {
+          url
+        }
+      }
+    }`,
+  }) 
+  console.log(params)
+
+
+  const paths = article.map((post) ({
+    params: { id: post.id },
+  }))
+  console.log(params)
+
+
+  return {paths, fallback: false }
+} 

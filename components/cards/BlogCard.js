@@ -2,7 +2,7 @@ import Query from '../../hooks/useApollo'
 import styles from '../../styles/Blog.module.scss'
 import Image from "next/image"
 import Link from 'next/link'
-import Card  from "react-bootstrap/card"
+import { Card }  from "react-bootstrap"
 import { GET_ARTICLES } from '../../graphql/get-articles'
 import { gql } from "@apollo/client";
 import client from '../../lib/apolloClient'
@@ -16,7 +16,7 @@ export default function BlogCard({ articles }) {
                     <div className={styles["blog-card-container"]}>
                         {articles && articles.map((article) => (
                             <Link 
-                                href={{ pathname: `/blog/post/[id]`, query: { id: article.id} }}>
+                                href={{ pathname: `/blog/[pid]`, query: { pid: article.id} }}>
                                 <a>
                                     <Card key={article.id} className={styles["blog-card"]}>
                                         <Image
@@ -38,7 +38,6 @@ export default function BlogCard({ articles }) {
                                             </Card.Text>
                                         </Card.Body>
                                     </Card>
-
                                 </a>
                             </Link>
                         ))}
