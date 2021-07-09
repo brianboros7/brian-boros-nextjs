@@ -1,3 +1,6 @@
+@import "mixins";
+@import "variables"; 
+
 .blog-wrapper {
     background-image: url("/assets/images/earth.jpg"); 
     background-size: cover; 
@@ -7,14 +10,23 @@
     color: white;  
 }
 
-.blog-card-container {
-    display: flex; 
-    flex-direction: row;
-    color: black; 
+.row {
+    flex-wrap: nowrap; 
+    justify-content: center;
+}
+.blog-articles {
     padding: 2px; 
 }
-.blog-card {
-    justify-content: space-between;
+
+.blog-card-container {
     padding: 2px; 
-    margin: 4px; 
+    margin: 3px; 
+}
+
+.blog-card-title {
+    color: $font-dark; 
+    padding: 2px; 
+}
+.blog-card-title:hover {
+    color: $font-hover;
 }

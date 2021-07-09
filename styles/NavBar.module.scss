@@ -26,11 +26,10 @@
 }
 
 .nav  {
-    padding: 1% 1%; 
+    padding: 2px; 
 
     @include desktop() {
-        padding-top: 4%; 
-        padding: 2% 2%; 
+        padding: 10px; 
     }
 }
 .nav-item {
@@ -41,12 +40,11 @@
     @include desktop() {
         padding-top: 30px; 
         font-size: $font-lg; 
-
+        padding-bottom: 30px; 
     }
 }
 .nav-item a {
     color: $font-light; 
-
     @include desktop() {
         padding: 5px; 
     }

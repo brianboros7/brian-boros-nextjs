@@ -4,12 +4,14 @@ export const GET_ARTICLES = gql`
     query Articles { 
         articles {
             id
-            author 
-            title 
-            date
             image {
                 url
             }
+            author 
+            title 
+            publsihed_at
+            date
+            body
         }
     }
 `

@@ -19,17 +19,17 @@ function NavBar() {
             <Row className={["nav"]}>
                 <Col className={styles["nav-item"]}>
                     <Link href="/" >
-                        <a alt="home page">Home</a>
+                        <a className="nav-link" alt="home page">Home</a>
                     </Link>
                 </Col>
                 <Col className={styles["nav-item"]}>
                     <Link href="/portfolio">
-                        <a alt="portfolio page">Portfolio</a>
+                        <a className="nav-link" alt="portfolio page">Portfolio</a>
                     </Link>
                 </Col>
                 <Col  className={styles["nav-item"]}>
                     <Link href="/blog">
-                        <a alt="blog page">Blog</a>
+                        <a className="nav-link" alt="blog page">Blog</a>
                     </Link>
                 </Col> 
             </Row>

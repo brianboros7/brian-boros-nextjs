@@ -1,4 +1,4 @@
-import gql from "graphql-tag";
+import { gql } from "apollo-client";
 
 export const GET_ARTICLE = gql`
 query SingleArticle($id: ID!) {
@@ -6,6 +6,7 @@ query SingleArticle($id: ID!) {
     id 
     author 
     published_at 
+    date
     title
     body
     image {
