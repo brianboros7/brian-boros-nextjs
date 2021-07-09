@@ -13,7 +13,7 @@ function Blog({ articles }) {
       <Header /> 
       <Container> 
         <h1>Blog Page</h1>
-        <Row> 
+        <Row className={styles["row"]}> 
           {articles.map((article) => {
               return(
                 <div className={styles['blog-articles']}> 
