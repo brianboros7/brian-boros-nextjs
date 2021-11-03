@@ -1,17 +1,20 @@
-import { gql } from "@apollo/client"
 import styles from '../../styles/ArticlePage.module.scss'
-import client from "../../lib/apolloClient"
 import Image from 'next/image'
 import Header from '../../components/header/Header'
 import { Container, Row, Col } from 'react-bootstrap'
+// import matter from 'gray-matter'
+// import { MDXRemote } from 'next-mdx-remote'
+// import { serialize } from 'next-mdx-remote/serialize'
+// import dynamic from 'next/dynamic'
 
-// Checkout this guide: https://nextjs.org/learn/basics/dynamic-routes/page-path-external-data
-const ArticlePage = ({ article }) => {
+
+const ArticlePage = ({ article, source }) => {
+
   return (
     <div className={styles['article-page']}>
       <Header /> 
-      <Container className={styles['article-page-content']}> 
-        <Row lg={12}>
+      <Container> 
+        <Row>
           <Image
             src={article.image[0].url}
             className={styles['blog-header-image']}
@@ -27,8 +30,8 @@ const ArticlePage = ({ article }) => {
               <p className={styles['article-page-author']}>Author: {article.author}</p>
               <p className={styles['article-page-date']}>Date: {article.published_at}</p>
             </div>
-            <div className={styles['article-page-body-container']}>
-              <p className={styles['article-page-body']}>{article.body}</p> 
+            <div className={styles['article-body']}>
+              <MDXRemote {...source} components={components} />
             </div>
           </Col> 
         </Row> 
@@ -39,8 +42,9 @@ const ArticlePage = ({ article }) => {
 
 export default ArticlePage
 
-// Basically copy pasted this from: https://nextjs.org/docs/basic-features/data-fetching#fallback-false
-// And adjust for this use case using graphql
+
+
+
 export async function getStaticPaths() {
   // Return a list of possible value for id
   // We need to fetch all the articles
@@ -49,14 +53,9 @@ export async function getStaticPaths() {
       query Articles {
         articles {
           id
-          image {
-            id
-            url
-          }
-          title
           author
-          published_at
-          body
+          title
+          date
         }
       }
     `,
@@ -75,9 +74,9 @@ export async function getStaticPaths() {
   }
 }
 
-// Basically copy pasted this from: https://nextjs.org/docs/basic-features/data-fetching#fallback-false
-// And adjust for this use case using graphql
-// This also gets called at build time
+
+
+
 export async function getStaticProps({ params }) {
   // params contains the article `id`.
   // If the route is like /blog/1, then params.id is 1
@@ -88,13 +87,9 @@ export async function getStaticProps({ params }) {
       query SingleArticle($id: ID!) {
         article(id: $id) {
           id
-          image {
-            id
-            url
-          }
-          title
           author
           published_at
+          title
           body
         }
       }
@@ -108,3 +103,14 @@ export async function getStaticProps({ params }) {
     },
   }
 }
+
+
+
+
+
+
+
+
+// Checkout this guide: https://nextjs.org/learn/basics/dynamic-routes/page-path-external-data
+// ** https://nextjs.org/docs/basic-features/data-fetching#fallback-false
+// ** https://nextjs.org/docs/basic-features/data-fetching#fallback-false

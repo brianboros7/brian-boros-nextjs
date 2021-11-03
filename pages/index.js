@@ -9,18 +9,18 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Brian S.  Boros | Home</title>
+        <title>Brian S. Boros | Home</title>
       </Head>
       <Header /> 
       <main className={["main"]}> 
         <Container className={styles["home-container"]}>
           <Row className={styles["home-main"]}> 
             <Col xs={8} lg={6} className={styles["home-main-content"]}>
-              <h2> 
-                let me help you build a
-				        growth strategy, driven 
-				        by data
-              </h2>
+              <h1> 
+                let me help you build a <br /> 
+                product marketing strategy, 
+                driven by data
+              </h1>
               <h3>
                 Hi, I'm Brian Boros! I'm here to work with you
 				        to build, test, and learn how we can grow our accuracy

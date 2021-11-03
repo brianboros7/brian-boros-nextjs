@@ -4,3 +4,7 @@ module.exports = {
     ["res.cloudinary.com"],
   },
 }
+
+// module.exports = withMDX({
+//   pageExtensions: ['js', 'jsx', 'mdx']
+// })

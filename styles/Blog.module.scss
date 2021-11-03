@@ -17,15 +17,22 @@
     padding: 2px; 
 }
 
-.blog-card-container {
+.card {
     padding: 2px; 
-    margin: 3px; 
+    margin: 2px; 
 }
 
-.blog-card-title {
+.card-title, .title {
+    font-size: 1.5rem; 
     color: $font-dark; 
     padding: 2px; 
 }
-.blog-card-title:hover {
+.title:hover {
     color: $font-hover;
+}
+
+.card-text, .text {
+    font-weight: bold; 
+    color: $font-dark; 
+    padding: 2px;
 }

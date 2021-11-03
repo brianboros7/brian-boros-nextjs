@@ -2,14 +2,22 @@
 import { Card } from 'react-bootstrap'
 import Image from 'next/image'
 import styles from '../../styles/Blog.module.scss'
-// import client from '../../lib/apolloClient'
 
 export default function BlogCard({ articles }) {
 
 
     return(
-        <Query>
-            
-        </Query>
+        <Card style={{ width: '23rem' }}>
+            <Image
+                src={article.image[0].url}
+                alt="blog card image thumbnail"
+                width={500}
+                height={250}
+            />
+            <Card.Body> 
+                <Card.Title><a className={styles['title']}>{article.title}</a></Card.Title> 
+                <Card.Text className={styles['text']}>{article.date}</Card.Text> 
+            </Card.Body> 
+        </Card>
     )
 }

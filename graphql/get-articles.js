@@ -1,4 +1,4 @@
-import gql from 'graphql-tag'
+import { request, gql } from 'graphql-request'
 
 export const GET_ARTICLES = gql`
     query Articles { 
@@ -15,3 +15,6 @@ export const GET_ARTICLES = gql`
         }
     }
 `
+
+request("http://localhost:1337", query)
+.then((data) => console.log(data))

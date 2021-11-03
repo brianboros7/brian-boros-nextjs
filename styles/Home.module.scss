@@ -25,39 +25,42 @@
     color: $font-dark; 
 
     @include mobile() {
-        padding: 2.5rem 0; 
-        padding-bottom: 2.5rem; 
+        padding: 2px; 
     }
     @include desktop() {
-        padding: 5rem 0; 
+        padding-top: 50px; 
     }
     @include desktop-large() {
-        padding: 5rem 0; 
+        padding-top: 75px; 
     }
 }
 
-.home-main-content h2 {
+.home-main-content h1 {
     text-transform: uppercase;
     color: $font-dark;
-    font-size: 12px;   
+    font-weight: 500;
 
+    @include mobile() {
+        padding: 2px; 
+    }
     @include desktop() {
-        padding: 2px 0; 
-        padding-right: 1rem;
-        font-size: 2.5rem; 
-        font-weight: 500;
+        padding: 5px 0; 
+    }
+    @include desktop-large() {
+        padding: 5px 0; 
     }
 }
 
 .home-main-content h3 {
     width: 100%; 
     color: $font-dark; 
-    font-size: 12px;  
 
+    @include mobile() {
+        font0size: 12px; 
+        padding: 2px; 
+    }
     @include desktop() {
         padding: 5px 0; 
-        padding-right: 1rem; 
-        font-size: 1.5rem; 
         font-weight: 400; 
     }
 }
@@ -67,7 +70,7 @@
     text-align: right;
 
     @include mobile() {
-        padding-top: 2rem; 
+        padding-top: 100px; 
     }
 
     @include desktop() {
