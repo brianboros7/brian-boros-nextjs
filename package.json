@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "graphql": "^15.5.1",
-    "graphql-request": "^3.5.0",
+    "graphql": "^15.7.2",
+    "graphql-request": "^3.6.1",
     "next": "10.0.6",
     "next-mdx-remote": "^3.0.2",
     "react": "17.0.1",

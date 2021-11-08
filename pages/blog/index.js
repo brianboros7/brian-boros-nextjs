@@ -1,5 +1,6 @@
 import styles from "../../styles/Blog.module.scss"
-import { gql } from "graphql-request"
+import { request, gql } from "graphql-request"
+import { GET_ARTICLES } from '../../graphql/get-articles'
 import Link from 'next/link'
 import Image from 'next/image'
 import Header from '../../components/header/Header'
@@ -7,8 +8,6 @@ import { Container, Row, Card } from 'react-bootstrap'
 // import BlogCard from '../../components/cards/BlogCard'
 
 function Blog({ articles }) {
-  // request("http://localhost:1337/graphql", query)
-  // .then((data) => console.log(data))
 
   return (
     <div className={styles["blog-page"]}>
@@ -46,27 +45,14 @@ export async function getStaticProps() {
   /**
    * Here is where you fetch the data from Strapi using graphql
    * You could import this query from your graphql folder and just pass => query: GET_ARTICLES
-   */
-
-  const { data } = await client.query({
-    query: gql`
-      query Articles {
-        articles {
-          id
-          image {
-            url
-          }
-          title
-          author
-          date
-        }
-      }
-    `,
+  */
+  const { data } = await query({
+    query: GET_ARTICLES
   })
 
   /**
-   * Now that you have the data pass it to your components props
-   */
+   * Now that you have the data, pass it to your components props
+  */
   return {
     props: {
       articles: data.articles,
