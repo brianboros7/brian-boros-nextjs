@@ -1,6 +1,5 @@
 import styles from "../../styles/Blog.module.scss"
-import { request, gql } from "graphql-request"
-import { GET_ARTICLES } from '../../graphql/get-articles'
+import { fetchAPI } from "../../lib/getStrapiUrl"
 import Link from 'next/link'
 import Image from 'next/image'
 import Header from '../../components/header/Header'
@@ -41,21 +40,22 @@ function Blog({ articles }) {
 
 export default Blog
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
   /**
    * Here is where you fetch the data from Strapi using graphql
    * You could import this query from your graphql folder and just pass => query: GET_ARTICLES
   */
-  const { data } = await query({
-    query: GET_ARTICLES
-  })
+  const articles = await fetchAPI(`/articles`)
 
   /**
    * Now that you have the data, pass it to your components props
   */
   return {
     props: {
-      articles: data.articles,
+      articles: articles[0],
     }, // will be passed to the page component as props
+    revalidate: 1,
+
   }
+
 }

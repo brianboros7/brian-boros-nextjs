@@ -16,5 +16,5 @@ export const GET_ARTICLES = gql`
     }
 `
 
-request("http://localhost:1337", query)
+request("http://localhost:1337", GET_ARTICLES)
 .then((data) => console.log(data))
