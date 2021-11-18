@@ -40,7 +40,7 @@ function Blog({ articles }) {
 
 export default Blog
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   /**
    * Here is where you fetch the data from Strapi using graphql
    * You could import this query from your graphql folder and just pass => query: GET_ARTICLES
