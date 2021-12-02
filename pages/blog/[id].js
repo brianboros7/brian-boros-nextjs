@@ -18,22 +18,21 @@ const ArticlePage = ({ article }) => {
         <Row>
           <Image
             src={article.image[0].url}
-            className={styles['blog-header-image']}
+            className={styles['article-header-image']}
             alt="blog header image"
             width={1138}
             height={500}
           />
         </Row> 
         <Row> 
-          <Col> 
-            <div className={styles['article-info']}>
-              <p className={styles['article-page-title']}>Title: {article.title}</p>
-              <p className={styles['article-page-author']}>Author: {article.author}</p>
-              <p className={styles['article-page-date']}>Date: {article.published_at}</p>
-            </div>
-            <div className={styles['article-body']}>
-            </div>
-          </Col> 
+          <div className={styles['article-info']}>
+            <h4 className={styles['article-title']}>Title: {article.title}</h4>
+            <h4 className={styles['article-author']}>Author: {article.author}</h4>
+            <h4 className={styles['article-date']}>Date: {article.published_at}</h4>
+          </div> 
+          <div className={styles['article-body']}>
+            <p>{article.body}</p>
+          </div>
         </Row> 
       </Container> 
     </div>
@@ -49,8 +48,9 @@ export async function getStaticPaths() {
 
   // Get the paths we want to pre-render based on posts
   const paths = articles.map((article) => ({
-    params: { id: articles.id }, 
+    params: { id: String(article.id) },
   }))
+
   
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
@@ -68,7 +68,7 @@ export async function getStaticProps({ params }) {
   // Pass article data to the page via props
   return {
     props: {
-      articles: articles,
+      article: articles[0],
     },
     revalidate: 1,
   }
