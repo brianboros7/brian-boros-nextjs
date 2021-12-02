@@ -1,7 +1,5 @@
 import Header from '../header/Header'
 import { GET_ARTICLES } from '../../graphql/get-articles'
-import { gql } from "@apollo/client";
-import client from '../../lib/apolloClient'
 
 function Article({ title, author, date, body }) {
     return(

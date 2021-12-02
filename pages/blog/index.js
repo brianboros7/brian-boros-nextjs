@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Header from '../../components/header/Header'
 import { Container, Row, Card } from 'react-bootstrap'
-// import BlogCard from '../../components/cards/BlogCard'
 
 function Blog({ articles }) {
 
@@ -31,7 +30,8 @@ function Blog({ articles }) {
                   </Card> 
                 </Link>
               )
-          })}
+            })
+          }
         </Row> 
       </Container> 
     </div>
@@ -52,7 +52,7 @@ export async function getStaticProps() {
   */
   return {
     props: {
-      articles: articles[0],
+      articles: articles,
     }, // will be passed to the page component as props
     revalidate: 1,
 
