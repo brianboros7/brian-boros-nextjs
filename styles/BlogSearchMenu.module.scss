@@ -1,0 +1,12 @@
+@import "mixins";
+@import "variables"; 
+
+
+.BlogSearchMenu-container {
+    display: flex; 
+    padding: 10px; 
+}
+
+.pad {
+    padding: 5px 10px; 
+}

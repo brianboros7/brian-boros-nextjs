@@ -1,5 +1,9 @@
-import BlogCard from '../cards/BlogCard'
+// import BlogCard from '../cards/BlogCard'
 
 export default function Articles({ articles }) {
-    return <BlogCard /> 
+    return(
+        <div> 
+            
+        </div>
+    ) 
 }

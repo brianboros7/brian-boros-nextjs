@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap'
 import Image from 'next/image'
 import styles from '../../styles/Blog.module.scss'
 
-export default function BlogCard({ articles }) {
+export default function BlogCard({) {
 
 
     return(

@@ -15,10 +15,10 @@ const ArticlePage = ({ article }) => {
     <div className={styles['article-page']}>
       <Header /> 
       <Container> 
-        <Row>
+        <Row className={styles["article-image-wrapper"]}>
           <Image
             src={article.image[0].url}
-            className={styles['article-header-image']}
+            className={styles['article-image']}
             alt="blog header image"
             width={1138}
             height={500}
